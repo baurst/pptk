@@ -22,7 +22,7 @@ set_target_properties(estimate_normals PROPERTIES
   COMPILE_FLAGS ${OpenMP_CXX_FLAGS}
   LINK_FLAGS ${_link_flags})
 set_target_python_module_name(estimate_normals)
-target_compile_definitions(estimate_normals PRIVATE -DUSE_TBB)
+# target_compile_definitions(estimate_normals PRIVATE -DUSE_TBB)
 target_link_libraries(estimate_normals Python3::NumPy Eigen3::Eigen
     TBB::tbb TBB::tbbmalloc
 )

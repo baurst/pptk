@@ -1,3 +1,31 @@
+# Goal & Modifications by this fork
+
+**Goal**: Dockerized build workflow that creates a pptk .whl, that can be used in other python envs.
+
+**Modifications:**
+* added dockerized build (tested for Ubuntu 22.04, builds and runs using default Python 3.10)
+* disabled TBB (pptk uses deprecated features, needs migration to newer TBB)
+
+## Build using docker
+
+```bash
+# in HOST:
+cd docker
+./build_base_docker.bash
+
+# go into the docker container
+docker compose run base bash
+
+# in CONTAINER:
+./build_from_inside_docker.bash
+
+# on the HOST: put the .whl file to pptk/build/dist/
+./copy_whl_from_container_to_host.bash
+```
+
+Original Readme below
+=====================
+
 # pptk - Point Processing Toolkit
 
 Copyright (C) 2011-2018 HERE Europe B.V.

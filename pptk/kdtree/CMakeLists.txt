@@ -19,7 +19,9 @@ elseif(UNIX)
   set_target_properties(kdtree PROPERTIES
     LINK_FLAGS "-static-libstdc++")
 endif()
-target_compile_definitions(kdtree PRIVATE -DUSE_TBB)
+# target_compile_definitions(kdtree PRIVATE -DUSE_TBB)
+# target_compile_definitions(kdtree PRIVATE USE_TBB=0)
+
 target_include_directories(kdtree PRIVATE
   ../include  # for python_util.h
   src         # for k-d tree source code
